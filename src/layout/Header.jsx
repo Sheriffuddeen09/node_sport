@@ -55,7 +55,7 @@ return(
 
     <div className="mx-auto overflow-hidden z_index">
         <h1 className=" sm:mt-4 mt-20 text-2xl font-bold mb-3 text-center mx-auto">Articles</h1>
-        <div className=" flex z_index justify-start lg:justify-center lg:items-center flex w-72 mx-auto scroll-wi rounded-lg scrollb sm:scrollbar-thumb-transparent  scroll-p-0 scroll-smooth scrollbar scrollbar-thumb-blue-300  scrollbar-thin scrollbar-track-white my-2">
+        <div className=" flex text-sm z_index justify-start lg:justify-center lg:items-center flex w-72 mx-auto scroll-wi rounded-lg scrollb sm:scrollbar-thumb-transparent  scroll-p-0 scroll-smooth scrollbar scrollbar-thumb-blue-300  scrollbar-thin scrollbar-track-white my-2">
             <p onClick={() => handleToggle(1)} className={`border sm:translate-x-6 border-gray-400 cursor-pointer whitespace-nowrap py-1 px-5 sm:rounded-lg ${toggle === 1 ? 'color' : 'none'}`}>
                 Generated Articles
             </p>
