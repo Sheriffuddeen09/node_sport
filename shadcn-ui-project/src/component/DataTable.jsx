@@ -22,7 +22,7 @@ export function DataTable({
   const loading = useContext(LoadingCtx);
 
   return (
-    <div className=" flex justify-start sm:justify-center sm:items-center flex-col flex w-72 lg-w-full mx-auto scroll-wid rounded-lg scrollb sm:scrollbar-thumb-transparent  scroll-p-0 scroll-smooth scrollbar scrollbar-thumb-blue-300  scrollbar-thin scrollbar-track-white my-2">
+    <div className=" md:-translate-x-4 lg:translate-x-0 translate-x-0 flex justify-start sm:justify-center sm:items-center flex-col flex w-72 lg-w-full mx-auto scroll-wid rounded-lg scrollb sm:scrollbar-thumb-transparent  scroll-p-0 scroll-smooth scrollbar scrollbar-thumb-blue-300  scrollbar-thin scrollbar-track-white my-2">
       <Table>
         <TableHeader >
           <TableRow >

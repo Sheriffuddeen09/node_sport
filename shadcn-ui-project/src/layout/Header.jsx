@@ -53,7 +53,7 @@ const [loading, setLoading] = useState(true);
 
 return(
 
-    <div className="mx-auto ">
+    <div className="mx-auto overflow-hidden">
         <h1 className="mt-10 text-2xl font-bold mb-3 text-center mx-auto">Articles</h1>
         <div className=" flex justify-start lg:justify-center lg:items-center flex w-72 mx-auto scroll-wi rounded-lg scrollb sm:scrollbar-thumb-transparent  scroll-p-0 scroll-smooth scrollbar scrollbar-thumb-blue-300  scrollbar-thin scrollbar-track-white my-2">
             <p onClick={() => handleToggle(1)} className={`border translate-x-6 border-gray-400 z-10 cursor-pointer whitespace-nowrap py-1 px-5 rounded-lg ${toggle === 1 ? 'color' : 'none'}`}>

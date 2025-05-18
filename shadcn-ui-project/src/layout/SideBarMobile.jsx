@@ -29,7 +29,7 @@ export const LoadingCtx = createContext(true);
 
 export function Sidebar() {
   const location = useLocation();
-  const [openArticles, setOpenArticles] = useState(false);
+  const [openArticles, setOpenArticles] = useState(true);
   const [loading, setLoading] = useState(true);
   const [toggle, setToggle] = useState(false)
 
@@ -47,7 +47,7 @@ export function Sidebar() {
   
   
   const content = (
-    <div  onClick={handleToggle} className={`flex height scrollba scrollbar-thumb-blue-100 rounded-lg scroll-p-0 scroll-smooth scrollbar scrollbar-thin scrollbar-track-white border-r p-4 fixed index-z top-0 bg-gray-100 w-72 p-4 h-full flex-col items-center ${toggle ? "block" : "hidden"}`}>
+    <div   className={`flex height scrollba scrollbar-thumb-blue-100 rounded-lg scroll-p-0 scroll-smooth scrollbar scrollbar-thin scrollbar-track-white border-r p-4 fixed index-z top-0 bg-gray-100 w-72 p-4 h-full flex-col items-center ${toggle ? "block" : "hidden"}`}>
       
     <div className="inline-flex  items-center gap-20 p-4">
     <div className="text-2xl bg-gray-100 font-bold text-center capitalize">abun</div>
@@ -77,12 +77,12 @@ export function Sidebar() {
               <BookOpen className="h-5 w-5 text-blue-700" />
               <span>Articles</span>
             </div>
-            {openArticles ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
+            {openArticles ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
           </button>
           {openArticles && (
             <div className="ml-8 mt-1 space-y-2 text-xs">
                 <>
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/create"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -92,7 +92,7 @@ export function Sidebar() {
                     <Plus className="inline w-4 h-4 mr-1" />
                     Create Article
                   </Link>
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/generated"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -103,7 +103,7 @@ export function Sidebar() {
                     Generated Articles
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/keyword"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -114,7 +114,7 @@ export function Sidebar() {
                     Keyword Projects
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/ai_keyword"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -125,7 +125,7 @@ export function Sidebar() {
                     AI Keyword to Article
                   </Link>
 
-                    <Link
+                    <Link onClick={handleToggle}
                     to="/steal"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -136,7 +136,7 @@ export function Sidebar() {
                     Steal Competitor Keyword
                   </Link>
                   
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/import"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -147,7 +147,7 @@ export function Sidebar() {
                     Import Keyword from GSC
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/manual"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -158,7 +158,7 @@ export function Sidebar() {
                     Manual Keyword to Article
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/bulk"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -169,7 +169,7 @@ export function Sidebar() {
                     Bulk Keyword to Article
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/longtail"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -180,7 +180,7 @@ export function Sidebar() {
                     Longtail Keyword to Article
                   </Link>
 
-                  <Link
+                  <Link onClick={handleToggle}
                     to="/setting"
                     className={cn(
                       'block px-2 py-1 rounded hover:bg-blue-400 hover:text-white transition',
@@ -196,7 +196,7 @@ export function Sidebar() {
         </div>
 
        
-        <Link
+        <Link onClick={handleToggle}
           to="/settings"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -208,7 +208,7 @@ export function Sidebar() {
         </Link>
 
        
-        <Link
+        <Link onClick={handleToggle}
           to="/blog"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -220,19 +220,19 @@ export function Sidebar() {
         </Link>
 
        
-        <Link
+        <Link onClick={handleToggle}
           to="/internal"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
             location.pathname === '/internal' && 'bg-muted font-medium'
           )}
         >
-          <LinkIcon className="h-5 w-5 text-blue-700" />
+         <LinkIcon onClick={handleToggle}Icon className="h-5 w-5 text-blue-700" />
           Internal Links
         </Link>
 
       
-        <Link
+        <Link onClick={handleToggle}
           to="/backlinks"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -244,7 +244,7 @@ export function Sidebar() {
         </Link>
 
         
-        <Link
+        <Link onClick={handleToggle}
           to="/integrate"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -256,7 +256,7 @@ export function Sidebar() {
         </Link>
 
     
-        <Link
+        <Link onClick={handleToggle}
           to="/subscription"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -268,7 +268,7 @@ export function Sidebar() {
         </Link>
 
 
-        <Link
+        <Link onClick={handleToggle}
           to="/affiliate"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -279,7 +279,7 @@ export function Sidebar() {
           Affiliate Program
         </Link>
 
-        <Link
+        <Link onClick={handleToggle}
           to="/help"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -291,7 +291,7 @@ export function Sidebar() {
           Help Center
         </Link>
        
-        <Link
+        <Link onClick={handleToggle}
           to="/update"
            className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -303,7 +303,7 @@ export function Sidebar() {
         </Link>
 
      
-        <Link
+        <Link onClick={handleToggle}
           to="/live"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
@@ -315,7 +315,7 @@ export function Sidebar() {
         </Link>
 
        
-        <Link
+        <Link onClick={handleToggle}
           to="/profile"
           className={cn(
             'flex items-center gap-3 text-sm p-2 rounded hover:bg-blue-400 hover:text-white transition',
