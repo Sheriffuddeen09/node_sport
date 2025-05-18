@@ -1,0 +1,59 @@
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { Sidebar } from "@/layout/SideBar";
+import { createContext, useState, useEffect, useContext } from "react";
+
+export const LoadingCtx = createContext(true);
+
+function Keyword() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Component to consume LoadingCtx and show either skeleton or real content
+  function LoadingConsumer() {
+    const isLoading = useContext(LoadingCtx);
+
+    if (isLoading) {
+      // Skeleton UI while loading
+      return (
+        <div className="p-6 mx-auto">
+           <div className="max-w-4xl mx-auto p-10">
+          <div className="animate-pulse bg-gray-300 h-10 w-64 rounded mb-4"></div>
+          <div className="animate-pulse bg-gray-300 h-6 w-full rounded mb-2"></div>
+          <div className="animate-pulse bg-gray-300 h-6 w-full rounded mb-2"></div>
+          <div className="animate-pulse bg-gray-300 h-6 w-5/6 rounded"></div>
+        </div>
+        </div>
+      );
+    }
+
+    // Actual content after loading
+    return (
+      <div className="text-center mt-20 mx-auto">
+        <h1 className="sm:text-3xl font-bold">Welcome To Keyword Project</h1>
+        <div className="flex justify-center my-6 items-center gap-4 mx-auto">
+          <p className="typing sm:text-xl text-xs">This Page is Coming Soon</p>
+          <p className="loading"></p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <LoadingCtx.Provider value={loading}>
+        <SidebarProvider>
+                <div className="flex h-screen">
+                <div className="sm:block hidden">
+          <Sidebar />
+          </div>
+                <LoadingConsumer />
+                </div>
+      </SidebarProvider>
+    </LoadingCtx.Provider>
+  );
+}
+
+export default Keyword;
