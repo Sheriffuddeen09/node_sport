@@ -9,7 +9,7 @@ export function Filters({ searchTerm, setSearchTerm }) {
         placeholder="Search by name or email "
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 h-8 w-64 translate-x-7 md:translate-x-20 lg:translate-x-60"
+        className="p-2 h-8 w-64 translate-x-7 md:translate-x-20 lg:translate-x-72"
       />
     </div>
   );
