@@ -27,7 +27,7 @@ function Create() {
     }
 
     return (
-      <div className="text-center mt-20 mx-auto">
+      <div className="text-center mt-20 mx-auto translate-x-7 md:translate-x-12 lg:translate-x-60 translate-x-7 md:translate-x-12 lg:translate-x-60">
         <h1 className="sm:text-3xl font-bold">Welcome To Create Article</h1>
         <div className="flex justify-center my-6 items-center gap-4 mx-auto">
           <p className="typing sm:text-xl text-xs">This Page is Coming Soon</p>

@@ -1,4 +1,5 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { FaWordpressSimple } from "react-icons/fa";
 
 export function DetailModal({ open, onClose, data }) {
   if (!data) return null;
@@ -7,17 +8,18 @@ export function DetailModal({ open, onClose, data }) {
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>User Detail</DialogTitle>
+          <DialogTitle>Dashboard Detail</DialogTitle>
         </DialogHeader>
         <div className="space-y-2">
-          <img
-            src={`https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=0D8ABC&color=fff&size=64`}
-            alt={data.name}
-            className="h-16 w-16 rounded-full"
-          />
-          <p><strong>ID:</strong> {data.id}</p>
-          <p><strong>Name:</strong> {data.name}</p>
-          <p><strong>Email:</strong> {data.email}</p>
+          <div>
+            <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-blue-700">
+            <FaWordpressSimple size={34} />
+            </div>
+          </div>
+          <p><strong>Article Title :</strong> {data.article}</p>
+          <p><strong>Keyword[Traffic]:</strong> {data.keyword}</p>
+          <p><strong>Words:</strong> {data.words}</p>
+          <p><strong>Created On:</strong> {data.created}</p>
         </div>
       </DialogContent>
     </Dialog>

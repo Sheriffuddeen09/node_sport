@@ -153,10 +153,11 @@
 
   @media (min-width: 768px) {
     .scroll-wi{
-      width: 700px;
+      width: 480px;
+      translate: 100px;
     }
     .scroll-wid{
-      width: 800px;
+      width: 480px;
     }
 
   }
@@ -169,6 +170,13 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+  .scroll-wi{
+      width: 950px;
+    }
+    .scroll-wid{
+      width: 950px;
+    }
 }
 
 .scrollba{

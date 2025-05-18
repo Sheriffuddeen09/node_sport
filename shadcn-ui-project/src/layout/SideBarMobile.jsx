@@ -332,14 +332,24 @@ export function Sidebar() {
 
 return (
     <LoadingCtx.Provider value={loading}>
-          <main className="py-4">
-            <div className={ `py-3 px-4 mb-10 inline-flex items-center gap-2 ${toggle ? "hidden" : "block"}`} onClick={handleToggle}>
-            <MenuIcon />
-            <p className="font-bold text-2xl">Sidebar </p>
-            </div>
-          {content}
-          </main>
-    </LoadingCtx.Provider>
+  <div className="">
+    <div
+         className={`
+          w-full flex items-center gap-2
+          fixed top-0 left-0 z-[1000]
+          bg-blue-500 text-white py-4 px-6
+          ${toggle ? "hidden" : ""}
+        `}
+        onClick={() => setToggle(true)}
+      >
+        <MenuIcon />
+        <p className="font-bold text-2xl">Sidebar</p>
+      </div>
+
+    {content}
+  </div>
+</LoadingCtx.Provider>
+
   );
 
 }
