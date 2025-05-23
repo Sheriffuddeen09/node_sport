@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import ChatSidebarMobile from "./ChatAiMobile";
 
 
-function MessageBox({ messages = [], onSend, user, newMessage, setNewMessage, editorRef }) {
+function MessageBox({ messages = [], onSend, user }) {
 
-  // const editorRef = useRef(null);
-  // const [newMessage, setNewMessage] = useState("");
+  const editorRef = useRef(null);
+  const [newMessage, setNewMessage] = useState("");
   const [showToolbar, setShowToolbar] = useState(false);
   const [toolbarPosition, setToolbarPosition] = useState({ top: 0, left: 30 });
   const [toggle, setToggle] = useState(false)
