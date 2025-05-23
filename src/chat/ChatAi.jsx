@@ -13,7 +13,7 @@ const AVATARS = {
   fin: logo,
 };
 
-export default function ChatSidebar({handleAddToComposer}) {
+export default function ChatSidebar({onAddToComposer, ...props}) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -140,7 +140,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
 
   {/* Add to composer button inside bubble */}
   {!isUser && (
-    <button onClick={() => onAdd(msg.text)}  className="text-sm mt-2 w-full mx-auto font-bold flex justify-between items-center text-blue-600  shadow-md  px-3 py-2 rounded-lg bg-white my-2 hover:bg-gray-50 transition">
+    <button onClick={() => onAdd?.(msg.text)}  className="text-sm mt-2 w-full mx-auto font-bold flex justify-between items-center text-blue-600  shadow-md  px-3 py-2 rounded-lg bg-white my-2 hover:bg-gray-50 transition">
       <div className=" gap-2  inline-flex items-center translate-x-8">
        <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
       
@@ -160,6 +160,16 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
       
     </button>
   )}
+  {showSource && (
+  <div className="mt-3 p-3 border rounded-md bg-white shadow-md text-sm text-gray-700">
+    <div className="font-semibold text-gray-800">{showSource.title}</div>
+    <div className="text-xs text-gray-500">
+      {showSource.author} · {showSource.time} · {showSource.type}
+    </div>
+    <p className="mt-1 text-gray-600">{showSource.summary}</p>
+  </div>
+)}
+
 </div>
 
         {/* 🚨 New: Internal content warning + Add button + Sources List */}
@@ -222,7 +232,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
               msgIndex={i}
               openSourceIndex={openSourceIndex}
               setOpenSourceIndex={setOpenSourceIndex}
-              onAdd={handleAddToComposer}
+              onAdd={onAddToComposer}
             />
             </React.Fragment>
           ))}

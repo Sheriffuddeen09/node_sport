@@ -82,7 +82,6 @@ export default function App() {
           newMessage={newMessage}
           setNewMessage={setNewMessage}
           editorRef={editorRef}
-          handleAddToComposer={handleAddToComposer}
         />
       </div>
 
@@ -95,8 +94,8 @@ export default function App() {
             messages={messages[selectedUser] || []}
             onSend={handleSend}
             newMessage={newMessage}
-          setNewMessage={setNewMessage}
-          editorRef={editorRef}
+            setNewMessage={setNewMessage}
+            editorRef={editorRef}
           />
           <button
             onClick={() => setSelectedUser(null)}
@@ -109,7 +108,7 @@ export default function App() {
           </button>
         </div>
       )}
-       <ChatSidebar handleAddToComposer={handleAddToComposer} />
+       <ChatSidebar onAddToComposer={handleAddToComposer} />
     </div>
   );
 }
