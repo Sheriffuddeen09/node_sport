@@ -50,7 +50,7 @@ function Profile (){
                     <p>Marry@Gmail.com</p>
                 </div>
             </div>
-            <p className=" font-semibold text-xs px-8 py-1">Lorem ipsum Dolor Sit amet.
+            <p className=" font-semibold capitalize text-xs px-8 py-1">Lorem ipsum Dolor Sit amet.
             consectetur Sadipiscing elit, sed diam nonumy eirmod tempor inviduntut labore et dolore
             magna aliquyan erat, sed diam.
             
