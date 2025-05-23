@@ -60,7 +60,7 @@ function Login () {
                 localStorage.setItem('user_firstname', user.firstname || "")
                 localStorage.setItem('user_lastname', user.lastname || "")
                 localStorage.setItem('user_email', user.email || "")
-                navigate("/dashboard"); // Redirect to profile page
+                navigate("/profile"); // Redirect to profile page
             } 
             else {
                 setErrMsg(response.data.message);
@@ -75,7 +75,7 @@ function Login () {
         }
         catch(err){
             if(!err?.response){
-                setErrMsg('No server Response')
+                setErrMsg('User not register || No server Response')
             }
             else if(err.response?.status === 401){
                 setErrMsg('Unauthorised')
@@ -133,8 +133,8 @@ function Login () {
             justify-center items-center text-white text-xs font-bold p-2 rounded bg-purple-600">
                 {loading ? <p className="loading"></p> : "Login"}</button>
             </form>
-            <div className={` flex justify-center items-center ${errMsg ? 'block' : 'hidden'}`}>
-                <p className="bg-red-600 text-white rounded-lg p-2 fixed top-2 mx-auto w-64  mt-0 mb-2 text-center ">{errMsg}</p>
+            <div className={` flex justify-center text-[10px] font-semibold items-center ${errMsg ? 'block' : 'hidden'}`}>
+                <p className="bg-red-600 text-white rounded-lg p-2 fixed top-0 mx-auto w-64  mt-0 mb-2 text-center ">{errMsg}</p>
                <div style={{
                 display:"flex",
                 justifyContent:"flex-start",
@@ -142,11 +142,6 @@ function Login () {
                 width:"100%",
                 margin:"auto"
             }}>
-                <div className="fixed top-12 translate-x-16 rounded-lg bg-green-400" style={{
-                    width: `${lineWidth}%`,
-                    height: '4px',
-                    transition: 'width 0.5s linear',
-                }}></div>
                 </div>
             </div>
             </div>

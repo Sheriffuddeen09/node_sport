@@ -106,6 +106,10 @@
     background-color: rgb(227, 227, 227);
     color: black;
   }
+  :disabled:hover{
+    background-color: rgb(233, 233, 233);
+    color: black;
+  }
  @media (min-width: 768px) {
   .widt{
     width: 400px;
