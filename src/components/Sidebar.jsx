@@ -47,41 +47,47 @@ const renderIcon = (id) => {
   };
 
   return (
-    <div className="font-bold justify-between flex my-2 text-sm items-center mx-auto" style={{ width: 200 }}>
-      <p className="mr-1 text-xs">{chats.length}</p>
-      {folders.map((f) => (
-        <div>
-        <div className="inline-flex -translate-x-2 items-center">
-        <div
-          key={f.id}
-          className="-translte-x-3 h-6 text-xs text-center mt-0 rounded py-1 px-2"
-          onClick={() => onSelect(f.id)}
-          style={{
-            cursor: 'pointer',
-            backgroundColor: selectedFolder === f.id ? 'whitesmoke' : 'white',
-          }}
-        >
-          {f.label}
-         
-        </div>
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-          </div>
-          <div className="fixed bottom-10"
-           style={{
-            padding: 0,
-            cursor: 'pointer',
-            backgroundColor: selectedFolder === f.id ? '#eee' : 'white',
-          }}
-          >
-          {renderIcon(f.id)}
+   <div className="font-bold justify-between flex my-2 text-sm items-center mx-auto" style={{ width: 200 }}>
+  <p className="mr-1 text-xs">{chats.length}</p>
+  {folders.map((f) => {
+    const isSelected = selectedFolder === f.id;
 
-            </div>
-            </div>
-      ))}
-      
-    </div>
+    return (
+      <div key={f.id}>
+        <div className="inline-flex -translate-x-2 items-center">
+          <div
+            onClick={() => onSelect(f.id)}
+            className={`h-6 text-xs cursor-pointer rounded text-center mt-0 py-1 px-2 transition-colors
+              ${isSelected ? 'bg-[whitesmoke] text-black' : 'hover:bg-blue-200 hover:text-gray-500'}
+            `}
+          >
+            {f.label}
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-3"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+
+        <div
+          className={`fixed bottom-10 cursor-pointer transition-colors ${
+            isSelected ? 'bg-[#eee]' : 'bg-white'
+          }`}
+        >
+          {renderIcon(f.id)}
+        </div>
+      </div>
+    );
+  })}
+</div>
+
   );
 }
 

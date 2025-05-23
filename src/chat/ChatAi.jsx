@@ -179,7 +179,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
               <p className="font-semibold text-gray-400">{msg.sources.length} relevant sources found</p>
               <ul className="mt-2 space-y-1">
                 {msg.sources.map((source, idx) => (
-                  <li key={idx} className="flex font-semibold my-1 items-center">
+                  <li key={idx} className="flex hover:underline cursor-pointer font-semibold my-1 items-center">
                     <svg
                       className="w-3 h-3 mr-1 text-gray-500"
                       fill="currentColor"
@@ -191,7 +191,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
                   </li>
                 ))}
               </ul>
-              <button className="text-black mt-1 text-sm font-semibold mt-2">See all →</button>
+              <button className="text-black hover:underline cursor-pointer mt-1 text-sm font-semibold mt-2">See all →</button>
             </div>
           </>
         )}
@@ -210,7 +210,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
 
   return (
     <div className="w-full lg:block hidden md:w-96 bg-mix bg-white flex flex-col pt- borde rounded-tr-xl rounded-br-xl">
-      <header className="px-3 py-2 flex justify-between items-center border-b-2">
+      <header className="px-3 py-1 translate-y-1 flex justify-between items-center border-b-2">
         <SidebarDetails handleView={handleView} view={view} setView={setView} />
       </header>
 
@@ -241,7 +241,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
         </main>
 
         <div className="px-4 pb-2">
-          <div className="text-xs mt-6 translate-y-2 font-medium bg-white shadow border rounded-lg px-3 py-1 inline-flex gap-1 items-center">
+          <div className="text-xs mt-6 hover:bg-gray-200 cursor-pointer translate-y-2 font-medium bg-white shadow border rounded-lg px-3 py-1 inline-flex gap-1 items-center">
             <span>Suggested</span> 💡 How do I get a refund?
           </div>
         </div>
@@ -258,7 +258,7 @@ const Bubble = ({ msg, msgIndex, openSourceIndex, setOpenSourceIndex }) => {
             <button
               onClick={handleSend}
               disabled={loading}
-              className="text-blue-600 disabled:opacity-40"
+              className="text-blue-600 disabled:opacity-40 size-6 cursor-pointer hover:bg-gray-200 hover:text-black rounded p-1"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
