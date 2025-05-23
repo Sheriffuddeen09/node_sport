@@ -79,125 +79,61 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #bfbbf7;
+}
+.bg-color{
+    background-color: #e6e6e8;
+}
+.bg-colors{
+    background-color: #dcdafa;
+}
+}
+
+@media (min-width: 318px) {
+  .widt {
+    width: 100%;
+  }
+  .heig{
+    height: 75vh;
   }
 }
 
-.typing {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  font-family: monospace;
-
-  /* Keep the space fixed */
-  width: 26ch;
-
-  /* Typing animation */
-  animation: typing 4s steps(26, end) forwards infinite;
-}
-
-/* Keyframes for typing effect */
-@keyframes typing {
-  from {
-    width: 0;
+@media (min-width: 768px) {
+  .widt {
+    width: 270px;
   }
-  to {
-    width: 26ch; /* Same as the final width */
+  .bord{
+    border-left: 1px solid #ccc;
+  }
+  .borde{
+    border: 1px solid #ccc;
+  }
+  .widlength{
+    width: 430px;
+  }
+  .heig{
+    height: 113dvw;
   }
 }
-.typing::after {
-  content: "|";
-  animation: blink 0.7s infinite;
-  margin-left: 2px;
+
+@media (min-width: 1024px) {
+  .widt {
+    width: 270px;
+  }
+  .borde{
+    border: 1px solid #ccc;
+  }
+  .widlength{
+    width: 450px;
+  }
+  .bord{
+    border-left: 1px solid #ccc;
+  }
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.z-index{
+  z-index: 1000;
 }
-
-.loading::before{
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 3px solid gray;
-    border-right-color: #c8c5f9;
-    animation: rotate 2s linear infinite;
-  }
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to{
-      transform: rotate(360deg);
-    }
-    
-  }
-  .color{
-    background-color: rgb(84, 146, 240);
-    color: white;
-    border: 1px solid rgb(84, 146, 240);
-  }
-
-
-  .scrollb{
-    scroll-snap-type: mandatory;
-    overflow-x: scroll;
-  }
-
-  @media (min-width:370px){
-    .height-t{
-      height: 490px;
-    }
-  }
-  @media (min-width: 768px) {
-    .scroll-wi{
-      width: 480px;
-      translate: 100px;
-    }
-    .scroll-wid{
-      width: 480px;
-    }
-  .height-t{
-      height: 700px;
-    }
-  }
-  /* Hide scrollbar for large screens */
-@media (min-width: 1024px) { /* lg breakpoint */
-  .scrollba::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, Opera */
-  }
-  .scrollba {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
-  .scroll-wi{
-      width: 950px;
-    }
-    .scroll-wid{
-      width: 950px;
-    }
-
-    .height-t{
-      height: 490px;
-    }
+.bg-mix{
+  background: linear-gradient(to bottom, rgb(253, 253, 255), rgb(255, 240, 240));
 }
-
-.scrollba{
-    scroll-snap-type: mandatory;
-    overflow-x: scroll;
-  }
-
-  .index-z{
-    z-index: 9999;
-    isolation: isolate;
-  }
-  .z_index{
-    z-index: -9999;
-  }
-  .text-small{
-    font-size: 10px;
-  }
