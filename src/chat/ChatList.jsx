@@ -6,7 +6,7 @@ function ChatList({ chats, onSelectUser, selectedUser, setSelectedFolder, select
     <div className='flex flex-col p-2 justify-items-center text-sm mx-auto widt'>
       {chats.map((user, index) => (
         <div
-        className='rounded-xl'
+        className='rounded-xl hove:bg-[#edf3f9]'
           key={index}
           style={{
             fontWeight:`${user.fontWeight}`,
