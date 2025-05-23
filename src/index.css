@@ -79,61 +79,41 @@
     @apply border-border;
   }
   body {
-    background-color: #bfbbf7;
-}
-.bg-color{
-    background-color: #e6e6e8;
-}
-.bg-colors{
-    background-color: #dcdafa;
+    background-color: white;
 }
 }
 
-@media (min-width: 318px) {
-  .widt {
-    width: 100%;
+.loading::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    border-right-color: #fff;
+    animation: rotate 2s linear infinite;
   }
-  .heig{
-    height: 75vh;
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+    
   }
-}
-
-@media (min-width: 768px) {
-  .widt {
-    width: 270px;
+  :disabled{
+    background-color: rgb(227, 227, 227);
+    color: black;
   }
-  .bord{
-    border-left: 1px solid #ccc;
+ @media (min-width: 768px) {
+  .widt{
+    width: 400px;
   }
-  .borde{
-    border: 1px solid #ccc;
+ }
+ @media (min-width: 378px) {
+  .widt{
+    width: 370px;
+    color: gray;
   }
-  .widlength{
-    width: 430px;
-  }
-  .heig{
-    height: 113dvw;
-  }
-}
-
-@media (min-width: 1024px) {
-  .widt {
-    width: 270px;
-  }
-  .borde{
-    border: 1px solid #ccc;
-  }
-  .widlength{
-    width: 450px;
-  }
-  .bord{
-    border-left: 1px solid #ccc;
-  }
-}
-
-.z-index{
-  z-index: 1000;
-}
-.bg-mix{
-  background: linear-gradient(to bottom, rgb(253, 253, 255), rgb(255, 240, 240));
-}
+ }
